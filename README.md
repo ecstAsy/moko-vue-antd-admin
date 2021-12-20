@@ -2,7 +2,7 @@
 
 ### 项目介绍
 
-> 使用 **Vue3 Vite Typescript** 搭配 **Element-Plus** 框架，搭建项目, 实现 **按需加载**，和自定义 **theme**
+> 使用 **Vue3 Vite Typescript** 搭配 **Antd-Vue** 框架，搭建项目, 实现 **按需加载**，和自定义 **theme**
 
 ### 依赖管理工具
 
