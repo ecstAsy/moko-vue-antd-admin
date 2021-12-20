@@ -1,0 +1,1 @@
+import{c as o,w as t,V as c,o as r,l as s}from"./vendor.96fb9c1f.js";/* empty css              *//* empty css              */import{_ as a}from"./index.6d94e971.js";const n={},d=s(" basic ");function _(i,f){const e=c;return r(),o(e,null,{default:t(()=>[d]),_:1})}var u=a(n,[["render",_]]);export{u as default};
