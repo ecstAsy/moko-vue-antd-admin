@@ -7,6 +7,7 @@ import { AntDesignVueResolver } from "unplugin-vue-components/resolvers";
 import { viteMockServe } from "vite-plugin-mock";
 
 export default defineConfig({
+  base: "/",
   plugins: [
     vue(),
     vueJsx(),
