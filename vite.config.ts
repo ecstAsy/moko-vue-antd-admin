@@ -7,7 +7,7 @@ import { AntDesignVueResolver } from "unplugin-vue-components/resolvers";
 import { viteMockServe } from "vite-plugin-mock";
 
 export default defineConfig({
-  base: "/",
+  base: "/moko-vue-antd-admin/",
   plugins: [
     vue(),
     vueJsx(),
