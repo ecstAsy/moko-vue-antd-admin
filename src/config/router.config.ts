@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 13:37:15
- * @LastEditTime: 2021-12-09 14:06:06
+ * @LastEditTime: 2021-12-27 13:31:49
  * @LastEditors: ecstAsy
  */
 
@@ -74,7 +74,7 @@ const AsyncRouterMap: Array<RouteRecordRaw> = [
             path: "/form/step-form",
             name: "FormStep",
             meta: { title: "分步表单", permission: ["admin"] },
-            component: () => import("@/views/form/step.vue"),
+            component: () => import("@/views/form/step/index.vue"),
           }, {
             path: "/form/advanced-form",
             name: "FormAdvanced",
