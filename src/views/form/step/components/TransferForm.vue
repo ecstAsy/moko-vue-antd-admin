@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-27 13:59:42
- * @LastEditTime: 2021-12-27 15:02:01
+ * @LastEditTime: 2021-12-28 10:19:42
  * @LastEditors: ecstAsy
 -->
 <template>
@@ -9,12 +9,12 @@
     ref="transfer"
     :model="transferState"
     :rules="rules"
-    :label-col="{ span: 12 }"
-    :wrapper-col="{ span: 12 }"
+    :label-col="{ span: 10 }"
+    :wrapper-col="{ span: 14 }"
   >
     <a-form-item
       label="付款账户"
-      required
+      name="account"
     >
       <a-input
         v-model:value="transferState.account"
@@ -27,7 +27,7 @@
       required
     >
       <div class="form-item-flex">
-        <a-form-item prop="date1">
+        <a-form-item name="date1">
           <a-select
             v-model:value="transferState.way"
             class="form-item-100"
@@ -46,7 +46,7 @@
         <a-form-item>
           <span class="line">-</span>
         </a-form-item>
-        <a-form-item prop="payment">
+        <a-form-item name="payment">
           <a-input
             v-model:value="transferState.payment"
             class="form-item-200"
@@ -55,33 +55,30 @@
         </a-form-item>
       </div>
     </a-form-item>
-    <!-- <a-form-item
+    <a-form-item
       label="收款人姓名"
-      prop="account"
+      name="name"
     >
       <a-input
-        v-model="transferState.name"
+        v-model:value="transferState.name"
         class="form-item-340"
         placeholder="请输入收款人姓名"
       />
-    </a-form-item> -->
-    <!-- <a-form-item
+    </a-form-item>
+    <a-form-item
       label="转账金额"
-      prop="amount"
     >
       <a-input-number
-        v-model="transferState.amount"
+        v-model:value="transferState.amount"
         :min="1"
-        controls-position="right"
       />
-    </a-form-item> -->
+    </a-form-item>
     <a-form-item
       :colon="false"
       label=" "
     >
       <a-button
         type="primary"
-        size="medium"
         @click="onSubmit"
       >
         下一步
@@ -96,16 +93,16 @@ import { TransferStateTypes } from "../type";
 import { PayWays } from "@/dataSource";
 
 const transfer = ref<Ref | null>(null);
-// const emit = defineEmits<{(e: "next", fields: TransferStateTypes): void}>();
+const emit = defineEmits<{(e: "next", fields: TransferStateTypes): void}>();
 const payWaysMap = reactive<Array<{label:string, value:number}>>(PayWays);
 const transferState = reactive<TransferStateTypes>({
   account: null,
   way: 1,
   payment: null,
   name: null,
-  amount: 100,
+  amount: 10,
 });
-const rules = {
+const rules = reactive({
   account: [
     {
       required: true,
@@ -134,19 +131,13 @@ const rules = {
       trigger: "blur",
     },
   ],
-  amount: [
-    {
-      required: true,
-      message: "请输入转账金额！",
-      trigger: "blur",
-    },
-  ],
-};
+});
+
 const onSubmit = async () => {
   try {
     await transfer.value.validate();
-    return true;
-    // return emit("next", transferState);
+    // return true;
+    return emit("next", transferState);
   } catch (error) {
     return false;
   }

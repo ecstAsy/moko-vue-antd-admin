@@ -87,10 +87,10 @@ const wrapperCol = reactive<{
 const formState = reactive<{
   account:string;
   password:string;
-  }>({
-    account: "",
-    password: "",
-  });
+}>({
+  account: "",
+  password: "",
+});
 
 const { validate, validateInfos } = loginForm(formState, reactive({
   account: [

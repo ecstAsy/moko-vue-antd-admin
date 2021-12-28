@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 14:51:57
- * @LastEditTime: 2021-12-07 11:17:43
+ * @LastEditTime: 2021-12-28 10:26:36
  * @LastEditors: ecstAsy
  */
 import { InjectionKey } from "vue";
@@ -21,6 +21,6 @@ export const store: Store<RootTypes> = createStore({
   },
 });
 
-export function useStore<T = AllStoreTypes>() {
+export function useStore<T = AllStoreTypes> () {
   return baseUseStore<T>(key);
 }

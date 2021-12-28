@@ -95,5 +95,13 @@ module.exports = {
       singleline: "never",
       multiline: "always",
     }],
+    "no-unused-vars": ["error", {
+      vars: "all",
+      args: "none",
+      ignoreRestSiblings: true,
+    }],
+    indent: "off",
+    "@typescript-eslint/indent": ["error", 2],
+    "space-before-function-paren": [2, "always"],
   },
 };
