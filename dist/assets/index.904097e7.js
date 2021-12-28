@@ -1,0 +1,1 @@
+import{_ as e}from"./index.f8c3270c.js";import{o as r,g as c}from"./vendor.7f567397.js";const n={};function o(s,t){return r(),c("div",null," svg-icon ")}var _=e(n,[["render",o]]);export{_ as default};
