@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 13:37:15
- * @LastEditTime: 2021-12-27 13:31:49
+ * @LastEditTime: 2022-01-04 13:12:07
  * @LastEditors: ecstAsy
  */
 
@@ -43,7 +43,7 @@ const AsyncRouterMap: Array<RouteRecordRaw> = [
             path: "/list/basic-list",
             name: "ListBasic",
             meta: {
-              title: "标准列表", keepAlive: true, permission: ["admin"],
+              title: "无限列表", keepAlive: true, permission: ["admin"],
             },
             component: () => import("@/views/list/basic/index.vue"),
           }, {
